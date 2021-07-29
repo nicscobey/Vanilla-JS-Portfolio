@@ -1,0 +1,321 @@
+body {
+    margin: 0;
+    font-family: 'Mukta', sans-serif;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    z-index: 3;
+    margin: 0;
+    width: 100%;
+    height: 60px;
+}
+
+#leftNav {
+    margin-left: 40px;
+    display: flex;
+    align-items: center;
+}
+
+#rightNav {
+    margin-right: 40px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+}
+
+.navLink {
+    margin: 20px;
+    font-weight: bold;
+    color: black;
+}
+
+#menu {
+    z-index: 3;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: black;
+    text-align: center;
+    display: none;
+}
+
+.menuLink {
+    font-weight: bold;
+    font-size: 25px;
+    padding: 15px;
+}
+
+#menuBtn {
+    display: none;
+}
+
+#menuBtn:hover, .menuLink:hover, .navLink:hover {
+    cursor: pointer;
+}
+
+#menuLine1, #menuLine2, #menuLine3 {
+    background: #00b2b5;
+    content: "";
+    display: block;
+    height: 6px;
+    border-radius: 3px;
+    margin: 7px 0;
+    transition: 0.5s;
+}
+
+.page {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    padding-top: 60px;
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+#home, #about {
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    bottom: 0;
+    overflow-y: auto;
+}
+
+#homeText, #aboutText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 60vw;
+    height: 100%;
+    padding-top: 30px;
+    /* overflow-y: auto; */
+}
+
+#home {
+    background-image: url('Images/IMG_0621 dark.jpg');
+    z-index: 2;
+}
+
+#about {
+    background-image: url('Images/IMG_0621 dark.jpg');
+    text-align: right;
+    display: flex; 
+    justify-content: flex-end;
+}
+
+#aboutText {
+    float: right;
+}
+
+p {
+    margin: 0;
+    padding: 20px;
+    color: white;
+    font-size: 16px;
+}
+
+p:hover {
+    cursor: default;
+}
+#hello {
+    font-size: 30px;
+    color: black;
+}
+
+#titles {
+    font-size: 45px;
+    color: #00b2b5;
+
+}
+
+#shortBlurb {
+
+}
+
+#learnMore {
+    padding: 20px;
+}
+
+.coloredLink {
+    color: #00b2b5;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+h3 {
+    color: white;
+    font-size: 25px;
+    background-color: rgba(0, 0, 0, 75%);
+    border-radius: 50px;
+    border: 1px solid white;
+    padding: 8px 15px;
+    display: inline;
+}
+
+#tagline {
+
+}
+
+#aboutParagraph {
+
+}
+
+button {
+    background-color: rgba(0, 0, 0, 75%);
+    border-radius: 20px;
+    color: white;
+    border: 1px solid white;
+    font-size: 16px;
+    padding: 10px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+#projects {
+    background: linear-gradient(to bottom, rgb(218, 218, 218), white);
+    background-attachment: fixed;
+    display: none;
+    flex-direction: column;
+}
+
+#projectsGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+}
+
+.projectGroup {
+    width: 35vw;
+    height: 300px;
+    text-align: center;
+    margin-top: 30px;
+    max-width: 400px;
+}
+
+/*
+Set JS so that upon hover over card, .projectBtns turns
+from display: none; to display: flex;
+and the img should dim a bit
+*/
+
+.projectCard {
+    height: 200px;
+    background-color: rgb(16, 119, 150);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    transition-duration: .5s;
+    border-radius: 20px;
+    box-shadow: 0px 1px 5px;
+    background-position: center;
+    background-size: cover;
+    align-items: center;
+}
+
+.projectBtns {
+    display: none;
+    justify-content: space-evenly;
+}
+
+#simon {
+    background-image: url('Images/Simon\ Says\ Game.png');
+}
+
+#memory {
+    background-image: url('Images/Memory\ Game.png');
+}
+
+#starwars {
+    background-image: url('Images/Star\ Wars.png');
+}
+
+#smallBusinessWebsite {
+    background-image: url('Images/Small\ Business\ Website.png');
+}
+
+.liveDemo {
+
+}
+
+.gitHub {
+
+}
+
+.projectSkills {
+    padding: 0;
+    color: rgb(16, 119, 150);
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.projectDescription {
+    padding: 0;
+    color: black;
+}
+
+@media (max-width: 800px) {
+    #projectsGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .projectGroup {
+        width: 85vw;
+    }
+
+    .page {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    #leftNav {
+        margin-left: 20px;
+    }
+    
+    #rightNav {
+        margin-right: 20px;
+    }
+}
+
+@media (max-width: 500px) {
+    nav {
+        display: none;
+    }
+
+    #menuBtn {
+        position: absolute;
+        width: 40px;
+        z-index: 4;
+        margin: 30px;
+        display: block;
+    }
+
+    #home {}
+
+    .page {
+        padding-top: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .projectGroup {
+        margin-top: 40px;
+    }
+}
