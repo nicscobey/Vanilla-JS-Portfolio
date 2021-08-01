@@ -5,9 +5,13 @@ let menu = document.getElementById('menu');
 let menuOpen = false;
 let pages = document.getElementsByClassName('page');
 let projects = document.getElementsByClassName('projectGroup');
-let projectNames = document.querySelectorAll('h3');
+let projectNames = document.querySelectorAll('h4');
 let projectCards = document.getElementsByClassName('projectCard');
 let projectBtns = document.getElementsByClassName('projectBtns');
+// let featureds = document.getElementsByClassName('featuredGroup');
+// let featuredNames = document.querySelectorAll('h4');
+// let featuredCards = document.getElementsByClassName('featuredCard');
+// let featuredBtns = document.getElementsByClassName('featuredBtns');
 
 // let projectInfo = [
 //     {
@@ -87,23 +91,42 @@ function openCloseMenu() {
 
 //event listener for hover over projects
 for (let i = 0; i < projectCards.length; i++) {
-    projectCards[i].addEventListener('mouseover', function animateProject() {
-        projectCards[i].style.transform = "translateY(-10px)";
-        projectCards[i].style.boxShadow = "0px 5px 15px";
-        projectCards[i].style.alignItems = "stretch";
+    projects[i].addEventListener('mouseover', function animateProject() {
+        projects[i].style.transform = "translateY(-10px)";
+        projects[i].style.boxShadow = "0px 5px 15px";
+        projects[i].style.alignItems = "stretch";
         projectBtns[i].style.display = "flex";
         projectNames[i].style.display = "none";
     })
 }
 
 for (let i = 0; i < projectCards.length; i++) {
-    projectCards[i].addEventListener('mouseleave', function animateProject() {
+    projects[i].addEventListener('mouseleave', function animateProject() {
         projectBtns[i].style.display = "none";
-        projectCards[i].style.transform = "translateY(0px)";
-        projectCards[i].style.alignItems = "center";
-        projectCards[i].style.boxShadow = "0px 1px 5px";
+        projects[i].style.transform = "translateY(0px)";
+        projects[i].style.alignItems = "center";
+        projects[i].style.boxShadow = "0px 1px 5px";
         projectNames[i].style.display = "block";
     })
 }
 
-//
+//event listener for hover over featured
+// for (let i = 0; i < featureds.length; i++) {
+//     featureds[i].addEventListener('mouseover', function animateFeatured() {
+//         featureds[i].style.transform = "translateY(-10px)";
+//         featureds[i].style.boxShadow = "0px 5px 15px";
+//         featureds[i].style.alignItems = "stretch";
+//         featuredBtns[i].style.display = "flex";
+//         featuredNames[i].style.display = "none";
+//     })
+// }
+
+// for (let i = 0; i < featureds.length; i++) {
+//     featureds[i].addEventListener('mouseleave', function animateFeatured() {
+//         featuredBtns[i].style.display = "none";
+//         featureds[i].style.transform = "translateY(0px)";
+//         featureds[i].style.alignItems = "center";
+//         featureds[i].style.boxShadow = "0px 1px 5px";
+//         featuredNames[i].style.display = "block";
+//     })
+// }

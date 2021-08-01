@@ -1,6 +1,9 @@
 body {
     margin: 0;
-    font-family: 'Mukta', sans-serif;
+    /* font-family: 'Mukta', sans-serif; */
+    /* font-family: 'Changa', sans-serif; */
+    /* font-family: 'Ruda', sans-serif; */
+    font-family: 'Sarabun', sans-serif;
 }
 
 nav {
@@ -89,14 +92,32 @@ a {
     overflow-y: auto;
 }
 
-#homeText, #aboutText {
+#homeText {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    /* align-items: center; */
     width: 60vw;
-    height: 100%;
+    /* height: 100%; */
+    padding-top: 60px;
+    /* overflow-y: auto; */
+    position: absolute;
+    top: 0;
+    bottom: 0; 
+
+}
+
+#aboutText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    width: 60vw;
+    /* height: 100%; */
     padding-top: 30px;
     /* overflow-y: auto; */
+    position: absolute;
+    top: 0; bottom: 0; 
 }
 
 #home {
@@ -107,12 +128,12 @@ a {
 #about {
     background-image: url('Images/IMG_0621 dark.jpg');
     text-align: right;
-    display: flex; 
+    display: none; 
     justify-content: flex-end;
 }
 
 #aboutText {
-    float: right;
+    right: 60px;
 }
 
 p {
@@ -133,7 +154,7 @@ p:hover {
 #titles {
     font-size: 45px;
     color: #00b2b5;
-
+    font-family: 'Ubuntu Mono', monospace;
 }
 
 #shortBlurb {
@@ -150,6 +171,8 @@ p:hover {
 
 h1 {
     text-align: center;
+    font-family: 'Syncopate', sans-serif;
+    color: rgb(16, 119, 150);
 }
 
 h2 {
@@ -157,13 +180,11 @@ h2 {
 }
 
 h3 {
-    color: white;
-    font-size: 25px;
-    background-color: rgba(0, 0, 0, 75%);
-    border-radius: 50px;
-    border: 1px solid white;
-    padding: 8px 15px;
-    display: inline;
+    text-align: center;
+    font-family: 'Syncopate', sans-serif;
+    color: #00b2b5;
+    font-size: 20px;
+    margin-top: 40px;
 }
 
 #tagline {
@@ -194,48 +215,12 @@ button:hover {
     flex-direction: column;
 }
 
-#projectsGrid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-items: center;
-}
-
-.projectGroup {
-    width: 35vw;
-    height: 300px;
-    text-align: center;
-    margin-top: 30px;
-    max-width: 400px;
-}
-
-/*
-Set JS so that upon hover over card, .projectBtns turns
-from display: none; to display: flex;
-and the img should dim a bit
-*/
-
-.projectCard {
-    height: 200px;
-    background-color: rgb(16, 119, 150);
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    position: relative;
-    transition-duration: .5s;
-    border-radius: 20px;
-    box-shadow: 0px 1px 5px;
-    background-position: center;
-    background-size: cover;
-    align-items: center;
-}
-
-.projectBtns {
-    display: none;
-    justify-content: space-evenly;
-}
-
 #simon {
     background-image: url('Images/Simon\ Says\ Game.png');
+}
+
+#calc {
+    background-image: url('Images/Calculator.png');
 }
 
 #memory {
@@ -258,43 +243,130 @@ and the img should dim a bit
 
 }
 
+#resume {
+    text-align: center;
+    display: none;
+}
+
+iframe {
+    /* max-width: 1024px;
+    max-height: 1325px; */
+    width: 850px;
+    height: 400px;
+    margin-bottom: 20px;
+    /* height: 60vh; */
+    /* height: 1100px; */
+}
+
+#contact {
+    display: none;
+}
+
+h4 {
+    color: white;
+    font-size: 25px;
+    background-color: rgba(0, 0, 0, 75%);
+    border-radius: 50px;
+    border: 1px solid white;
+    padding: 8px 15px 8px 15px;
+    /* display: inline; */
+}
+
+h5 {
+    margin: 0;
+    font-size: 16px;
+    color: rgb(16, 119, 150);
+
+}
+
+#projectsGrid {
+    display: flex;
+    max-width: 1200px;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    /* justify-content: flex-end; */
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.projectGroup {
+    width: 35vw;
+    /* height: 300px; */
+    text-align: center;
+    /* margin-top: 50px; */
+    max-width: 300px;
+    /* background-color: aqua; */
+    transition-duration: .5s;
+    border-radius: 20px;
+    box-shadow: 0px 1px 5px;
+    margin: 50px;
+    /* height: 85%; */
+}
+
+.projectCard {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    transition-duration: .5s;
+    border-radius: 20px 20px 0 0;
+    /* box-shadow: 0px 1px 5px; */
+    background-position: center;
+    background-size: cover;
+    align-items: center;
+}
+
+.projectBtns {
+    display: none;
+    /* display: flex; */
+    justify-content: space-evenly;
+    width: 100%;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
 .projectSkills {
     padding: 0;
     color: rgb(16, 119, 150);
-    margin-top: 10px;
+    margin: 10px;
     font-size: 20px;
-    font-weight: bold;
+    /* font-weight: bold; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.skill {
+    background-color: rgba(0, 0, 0, 75%);
+    border-radius: 20px;
+    color: white;
+    border: 1px solid white;
+    font-size: 14px;
+    padding: 7px 14px;
+    margin: 7px;
 }
 
 .projectDescription {
     padding: 0;
     color: black;
+    margin: 10px;
+}
+
+hr {
+    width: 85%;
+}
+
+@media (max-width: 1200px) {
+    #projectGrid {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 @media (max-width: 800px) {
-    #projectsGrid {
-        grid-template-columns: 1fr;
-    }
-
-    .projectGroup {
-        width: 85vw;
-    }
-
-    .page {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
-    #leftNav {
-        margin-left: 20px;
-    }
-    
-    #rightNav {
-        margin-right: 20px;
-    }
-}
-
-@media (max-width: 500px) {
     nav {
         display: none;
     }
@@ -307,15 +379,63 @@ and the img should dim a bit
         display: block;
     }
 
-    #home {}
+    #projectGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .projectGroup {
+        width: 80vw;
+    }
 
     .page {
-        padding-top: 20px;
         padding-left: 20px;
         padding-right: 20px;
     }
 
-    .projectGroup {
-        margin-top: 40px;
+    #aboutText {
+        right: 20px;
+    }
+
+    #leftNav {
+        margin-left: 20px;
+    }
+    
+    #rightNav {
+        margin-right: 20px;
+    }
+}
+
+@media (max-width: 500px) {
+    #homeText {
+        position: static;
+    }
+
+    #aboutText {
+        width: 75vw;
+    }
+
+    h1 {
+        font-size: 20px;
+        margin-top: 45px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .page {
+        padding: 0;
+    }
+
+    #aboutText {
+        right: 0;
+    }
+
+    h4 {
+        font-size: 20px;
+    }
+
+    .projectDescription {
+        font-size: 15px;
     }
 }
