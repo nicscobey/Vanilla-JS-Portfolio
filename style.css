@@ -65,7 +65,7 @@ a {
 }
 
 #menuLine1, #menuLine2, #menuLine3 {
-    background: #00b2b5;
+    background: #55D6BE;
     content: "";
     display: block;
     height: 6px;
@@ -153,7 +153,7 @@ p:hover {
 
 #titles {
     font-size: 45px;
-    color: #00b2b5;
+    color: #55D6BE;
     font-family: 'Ubuntu Mono', monospace;
 }
 
@@ -166,25 +166,26 @@ p:hover {
 }
 
 .coloredLink {
-    color: #00b2b5;
+    color: #55D6BE;
 }
 
 h1 {
     text-align: center;
     font-family: 'Syncopate', sans-serif;
-    color: rgb(16, 119, 150);
+    color: #7CEA9C;
 }
 
 h2 {
     text-align: center;
+    color: white;
 }
 
 h3 {
     text-align: center;
     font-family: 'Syncopate', sans-serif;
-    color: #00b2b5;
+    color: #59CD90;
     font-size: 20px;
-    margin-top: 40px;
+    margin-top: 80px;
 }
 
 #tagline {
@@ -209,10 +210,150 @@ button:hover {
 }
 
 #projects {
-    background: linear-gradient(to bottom, rgb(218, 218, 218), white);
+    /* background: linear-gradient(to bottom, rgb(218, 218, 218), white); */
+    background-color:#001524;
     background-attachment: fixed;
     display: none;
     flex-direction: column;
+}
+
+h6 {
+    /* margin: 0 0 10px 0; */
+    margin: 0;
+    font-size: 24px;
+    color: #55D6BE;
+    font-weight: bold;
+    height: 33%;
+    display: flex;
+    align-items: center;
+
+}
+
+h7 {
+    /* margin: 10px 0 0 auto; */
+    /* margin-right: 0;
+    margin-left: auto; */
+    margin: 10px 0 0 auto;
+    font-size: 16px;
+    color: #55D6BE;
+    font-weight: bold;
+    /* align-self: right; */
+    width: 100%;
+    text-align: right;
+    /* float: right; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.featuredProjects {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.featuredGroup {
+    max-width: 850px;
+    display: flex;
+    justify-content: center;
+    /* margin-right: auto;
+    margin-left: auto; */
+    margin: 100px auto 100px auto;
+    transition-duration: .5s;
+    border-radius: 20px;
+    /* box-shadow: 0px 1px 5px; */
+}
+
+.featuredCardLeft {
+    width: 50%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 20px 0 0 20px;
+    background-position: center;
+    background-size: cover;
+    /* align-items: flex-start;
+    padding-left: 20px; */
+    /* align-items: center; */
+    /* filter: grayscale(100%); */
+    background-blend-mode: sepia(100%) hue-rotate(135deg);
+
+}
+
+.featuredInfoRight {
+    width: 50%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.featuredBtns {
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center; */
+}
+
+.featuredDescription {
+    z-index: 1;
+    width: 105%;
+    /* box-shadow: 0px 1px 5px; */
+    background-color: #15616D;
+    text-align: right;
+    height: 33%;
+    display: flex;
+    align-items: center;
+}
+
+.featuredInfoRightBottom {
+    height: 33%;
+}
+
+.featuredSkills {
+    padding: 0;
+    color: rgb(16, 119, 150);
+    margin: 10px 0 10px 20px;
+    font-size: 20px;
+    /* font-weight: bold; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.featuredSkill {
+    background-color: rgba(147, 145, 150, 75%);
+    border-radius: 20px;
+    color: white;
+    border: 1px solid white;
+    font-size: 14px;
+    padding: 7px 14px;
+    margin: 7px 0 7px 14px;
+}
+
+.featuredLinks {
+    /* text-align: left; */
+    /* width: auto; */
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    /* margin-top: 10px; */
+    font-size: 14px;
+}
+
+.featuredLink {
+    margin: 5px;
+    width: 125px;
+}
+
+#simon, #calc, #memory, #starwars, #smallBusinnessWebsite {
+    /* backdrop-filter: ; */
+    /* sepia(100%) hue-rotate(135deg) */
 }
 
 #simon {
@@ -252,8 +393,10 @@ iframe {
     /* max-width: 1024px;
     max-height: 1325px; */
     width: 850px;
-    height: 400px;
+    min-height: 200px;
     margin-bottom: 20px;
+    height: 60vh;
+    max-height: 600px;
     /* height: 60vh; */
     /* height: 1100px; */
 }
@@ -303,6 +446,7 @@ h5 {
     box-shadow: 0px 1px 5px;
     margin: 50px;
     /* height: 85%; */
+    background-color: white;
 }
 
 .projectCard {
