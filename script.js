@@ -10,8 +10,9 @@ let projectCards = document.getElementsByClassName('projectCard');
 let projectBtns = document.getElementsByClassName('projectBtns');
 let featureds = document.getElementsByClassName('featuredGroup');
 // let featuredNames = document.querySelectorAll('h4');
-// let featuredCards = document.getElementsByClassName('featuredCard');
+let featuredCards = document.getElementsByClassName('featuredCard');
 let featuredBtns = document.getElementsByClassName('featuredLinks');
+const featuredDescriptions = document.getElementsByClassName('featuredDescription');
 
 // let projectInfo = [
 //     {
@@ -42,6 +43,12 @@ let featuredBtns = document.getElementsByClassName('featuredLinks');
 
 
 
+//consider adding animation when clicking to new tab
+//if next tap is greater page number, slide left
+//if next tab is smaller page number, slide right
+//(use position to move it right or left)
+
+
 //functioning nav links
 for (let i = 0; i < navLinks.length; i++) {
     navLinks[i].addEventListener('click', ()=> openPage(i))
@@ -67,7 +74,7 @@ function openPage(i) {
             console.log('j is ' + j);
             console.log('i is ' + i);
             pages[j].style.display = "none";
-            navLinks[j].style.textDecoration = "";
+            navLinks[j].style.textDecoration = "none";
         }
     }
 }
@@ -101,6 +108,7 @@ for (let i = 0; i < projectCards.length; i++) {
         projects[i].style.alignItems = "stretch";
         projectBtns[i].style.display = "flex";
         projectNames[i].style.display = "none";
+        projectCards[i].style.filter = "none";
     })
 }
 
@@ -111,6 +119,7 @@ for (let i = 0; i < projectCards.length; i++) {
         projects[i].style.alignItems = "center";
         projects[i].style.boxShadow = "0px 1px 5px";
         projectNames[i].style.display = "block";
+        projectCards[i].style.filter = "";
     })
 }
 
@@ -121,7 +130,8 @@ for (let i = 0; i < featureds.length; i++) {
         featureds[i].style.boxShadow = "0px 5px 15px";
         featureds[i].style.alignItems = "stretch";
         featuredBtns[i].style.display = "flex";
-        // featuredNames[i].style.display = "none";
+        featuredCards[i].style.filter = "none";
+        featuredDescriptions[i].style.backgroundColor = "#b3b3b3";
     })
 }
 
@@ -131,7 +141,8 @@ for (let i = 0; i < featureds.length; i++) {
         featureds[i].style.transform = "translateY(0px)";
         featureds[i].style.alignItems = "center";
         featureds[i].style.boxShadow = "";
-        // featuredNames[i].style.display = "block";
+        featuredCards[i].style.filter = "";
+        featuredDescriptions[i].style.backgroundColor = "";
     })
 }
 

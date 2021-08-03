@@ -4,17 +4,19 @@ body {
     /* font-family: 'Changa', sans-serif; */
     /* font-family: 'Ruda', sans-serif; */
     font-family: 'Sarabun', sans-serif;
+    background: black;
 }
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: absolute;
+    position: fixed;
     z-index: 3;
     margin: 0;
     width: 100%;
     height: 60px;
+    background-color: rgba(0, 0, 0, 75%);
 }
 
 #leftNav {
@@ -36,8 +38,18 @@ a {
 .navLink {
     margin: 20px;
     font-weight: bold;
-    color: black;
+    color: white;
     /* text-decoration-thickness: 10px; */
+}
+
+.navLink:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 5px;
+}
+
+.homeLink {
+    text-decoration: underline;
+    text-decoration-thickness: 5px;
 }
 
 #menu {
@@ -188,7 +200,7 @@ p:hover {
 }
 
 .coloredLink {
-    color: #55D6BE;
+    color: #7CF0BD;
 }
 
 /* .invisible {
@@ -199,6 +211,7 @@ h1 {
     text-align: center;
     font-family: 'Syncopate', sans-serif;
     color: #7CEA9C;
+    font-size: 70px;
 }
 
 h2 {
@@ -209,10 +222,10 @@ h2 {
 h3 {
     text-align: center;
     font-family: 'Ubuntu Mono', monospace;
-    color: #59CD90;
-    font-size: 30px;
-    margin-top: 80px;
-    margin-bottom: 100px;
+    color: #7CF0BD;
+    font-size: 40px;
+    margin-top: 100px;
+    margin-bottom: 50px;
     font-weight: normal;
 }
 
@@ -240,9 +253,11 @@ button:hover {
     cursor: pointer;
 }
 
+/*#0b353b*/
 #projects {
-    /* background: linear-gradient(to bottom, rgb(218, 218, 218), white); */
-    background-color:#001524;
+    background: linear-gradient(to bottom, black, #15616D);
+    /* background-color:#001524; */
+    /* background-color: #15616D; */
     background-attachment: fixed;
     display: none;
     flex-direction: column;
@@ -252,6 +267,7 @@ h6 {
     /* margin: 0 0 10px 0; */
     margin: 20px 20px 0 20px;
     font-size: 24px;
+    /* color: #FEF19A; */
     color: #55D6BE;
     font-weight: bold;
     height: 33%;
@@ -292,59 +308,45 @@ h7 {
     justify-content: center;
     /* margin-right: auto;
     margin-left: auto; */
-    margin: 0 auto 200px auto;
+    margin: 100px auto 200px auto;
     transition-duration: .5s;
     border-radius: 20px;
     /* box-shadow: 0px 1px 5px; */
 }
 
-.featuredCardLeft {
+.featuredCard {
     width: 50%;
     height: 300px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border-radius: 20px 0 0 20px;
     background-position: center;
     background-size: cover;
-    /* align-items: flex-start;
-    padding-left: 20px; */
-    /* align-items: center; */
-    /* filter: grayscale(100%); */
-    background-blend-mode: sepia(100%) hue-rotate(135deg);
+    filter: grayscale(100%);
+    transition-duration: .5s;
 }
 
-.featuredInfoLeft {
-    width: 50%;
-    height: 300px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
+.featuredCardLeft {
+    border-radius: 20px 0 0 20px;
 }
 
 .featuredCardRight {
+    border-radius: 0 20px 20px 0;
+}
+
+.featuredInfo {
     width: 50%;
     height: 300px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border-radius: 0 20px 20px 0;
-    background-position: center;
-    background-size: cover;
-    /* align-items: flex-start;
-    padding-left: 20px; */
-    /* align-items: center; */
-    /* filter: grayscale(100%); */
-    background-blend-mode: sepia(100%) hue-rotate(135deg);
+}
+
+.featuredInfoLeft {
+    align-items: flex-start;
 }
 
 .featuredInfoRight {
-    width: 50%;
-    height: 300px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: flex-end;
 }
 
@@ -358,11 +360,15 @@ h7 {
     z-index: 1;
     width: 105%;
     /* box-shadow: 0px 1px 5px; */
-    background-color: #15616D;
+    /* background-color: #001524; */
+    /* background-color: #65c0af; */
+    background-color: #F6D43C;
     text-align: right;
     height: 33%;
     display: flex;
     align-items: center;
+    color: black;
+    transition-duration: .5s;
 }
 
 .featuredDescriptionLeft {
@@ -375,10 +381,9 @@ h7 {
 
 .featuredSkills {
     padding: 0;
-    color: rgb(16, 119, 150);
+    color: #7CF0BD;
     margin: 10px 20px 10px 20px;
     font-size: 20px;
-    /* font-weight: bold; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -391,23 +396,22 @@ h7 {
 }
 
 .featuredSkill {
-    background-color: rgba(147, 145, 150, 75%);
+    background-color: white;
     border-radius: 20px;
-    color: white;
+    color: black;
     border: 1px solid white;
     font-size: 14px;
     padding: 7px 14px;
-    margin: 7px 0 7px 14px;
+
 }
 
 .featuredSkillLeft {
-    background-color: rgba(147, 145, 150, 75%);
-    border-radius: 20px;
-    color: white;
-    border: 1px solid white;
-    font-size: 14px;
-    padding: 7px 14px;
+
     margin: 7px 14px 7px 0px;
+}
+
+.featuredSkillRight {
+    margin: 7px 0 7px 14px;
 }
 
 .featuredLinks {
@@ -479,6 +483,7 @@ iframe {
 
 #contact {
     display: none;
+    background: orangered;
 }
 
 h4 {
@@ -494,7 +499,7 @@ h4 {
 h5 {
     margin: 0;
     font-size: 16px;
-    color: rgb(16, 119, 150);
+    color: #15616D;
 
 }
 
@@ -516,7 +521,7 @@ h5 {
     text-align: center;
     /* margin-top: 50px; */
     max-width: 300px;
-    /* background-color: aqua; */
+    /* background-color: #FEF19A; */
     transition-duration: .5s;
     border-radius: 20px;
     box-shadow: 0px 1px 5px;
@@ -537,6 +542,7 @@ h5 {
     background-position: center;
     background-size: cover;
     align-items: center;
+    filter: grayscale(100%);
 }
 
 .projectBtns {
@@ -561,9 +567,11 @@ h5 {
 }
 
 .skill {
-    background-color: rgba(0, 0, 0, 75%);
+    /* background-color: rgba(0, 0, 0, 75%); */
+    background-color: #001524;
+    background-color: #F6D43C;
     border-radius: 20px;
-    color: white;
+    color: black;
     border: 1px solid white;
     font-size: 14px;
     padding: 7px 14px;
@@ -580,6 +588,29 @@ hr {
     width: 85%;
 }
 
+#contactBar {
+    display: flex;
+    justify-content: center;
+}
+
+.contactTab {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px;
+}
+
+#email {
+
+}
+
+#location {
+
+}
+
+#phone {
+
+}
 @media (max-width: 1200px) {
     #projectGrid {
         grid-template-columns: 1fr 1fr;
