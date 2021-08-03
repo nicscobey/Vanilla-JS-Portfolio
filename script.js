@@ -55,6 +55,9 @@ for (let i = 0; i < navLinks.length; i++) {
 //open pages function
 function openPage(i) {
     pages[i].style.display = "block";
+    navLinks[i].style.textDecoration = "underline";
+    navLinks[i].style.textDecorationThickness = "5px";
+    console.log(navLinks[i].innerHTML);
     if (menuOpen) {
         menu.style.display = "none";
         openCloseMenu();
@@ -64,6 +67,7 @@ function openPage(i) {
             console.log('j is ' + j);
             console.log('i is ' + i);
             pages[j].style.display = "none";
+            navLinks[j].style.textDecoration = "";
         }
     }
 }
@@ -130,3 +134,21 @@ for (let i = 0; i < featureds.length; i++) {
         // featuredNames[i].style.display = "block";
     })
 }
+
+
+
+//trying to make each child of homepage's text animate
+// function animateDiv() {
+//     const children = document.getElementById('homeText').getElementsByTagName('*');
+//     console.log(children);
+
+
+//     for (let i = 0; i < children.length; i++) {
+//         setTimeout(function() {console.log(i)}, (i*1000));
+//         children[i].style.animation = `1s ease-out ${i}s 1 slideFromLeft`;
+//         setTimeout(function() {children[i].classList.remove('invisible')}, (i*1000));
+
+//     }
+// }
+
+// animateDiv();

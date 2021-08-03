@@ -37,6 +37,7 @@ a {
     margin: 20px;
     font-weight: bold;
     color: black;
+    /* text-decoration-thickness: 10px; */
 }
 
 #menu {
@@ -104,7 +105,17 @@ a {
     position: absolute;
     top: 0;
     bottom: 0; 
+    animation: 1s ease-out 0s 1 slideFromLeft;
 
+}
+
+@keyframes slideFromLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
 }
 
 #aboutText {
@@ -118,6 +129,17 @@ a {
     /* overflow-y: auto; */
     position: absolute;
     top: 0; bottom: 0; 
+    animation: 1s ease-out 0s 1 slideFromRight;
+
+}
+
+@keyframes slideFromRight {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
 }
 
 #home {
@@ -169,6 +191,10 @@ p:hover {
     color: #55D6BE;
 }
 
+/* .invisible {
+    display: none;
+} */
+
 h1 {
     text-align: center;
     font-family: 'Syncopate', sans-serif;
@@ -182,14 +208,19 @@ h2 {
 
 h3 {
     text-align: center;
-    font-family: 'Syncopate', sans-serif;
+    font-family: 'Ubuntu Mono', monospace;
     color: #59CD90;
-    font-size: 20px;
+    font-size: 30px;
     margin-top: 80px;
+    margin-bottom: 100px;
+    font-weight: normal;
 }
 
 #tagline {
-
+    color: #55D6BE;
+    font-size: 36px;
+    /* font-weight: bold; */
+    font-family: 'Ubuntu Mono', monospace;
 }
 
 #aboutParagraph {
@@ -219,7 +250,7 @@ button:hover {
 
 h6 {
     /* margin: 0 0 10px 0; */
-    margin: 0;
+    margin: 20px 20px 0 20px;
     font-size: 24px;
     color: #55D6BE;
     font-weight: bold;
@@ -233,7 +264,8 @@ h7 {
     /* margin: 10px 0 0 auto; */
     /* margin-right: 0;
     margin-left: auto; */
-    margin: 10px 0 0 auto;
+    margin: 10px -20px 0;
+    /* padding-right: 20px; */
     font-size: 16px;
     color: #55D6BE;
     font-weight: bold;
@@ -244,7 +276,8 @@ h7 {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-end;
+    right: 20px;
+    /* align-items: flex-end; */
 }
 
 .featuredProjects {
@@ -259,7 +292,7 @@ h7 {
     justify-content: center;
     /* margin-right: auto;
     margin-left: auto; */
-    margin: 100px auto 100px auto;
+    margin: 0 auto 200px auto;
     transition-duration: .5s;
     border-radius: 20px;
     /* box-shadow: 0px 1px 5px; */
@@ -279,7 +312,31 @@ h7 {
     /* align-items: center; */
     /* filter: grayscale(100%); */
     background-blend-mode: sepia(100%) hue-rotate(135deg);
+}
 
+.featuredInfoLeft {
+    width: 50%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.featuredCardRight {
+    width: 50%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 0 20px 20px 0;
+    background-position: center;
+    background-size: cover;
+    /* align-items: flex-start;
+    padding-left: 20px; */
+    /* align-items: center; */
+    /* filter: grayscale(100%); */
+    background-blend-mode: sepia(100%) hue-rotate(135deg);
 }
 
 .featuredInfoRight {
@@ -308,6 +365,10 @@ h7 {
     align-items: center;
 }
 
+.featuredDescriptionLeft {
+    text-align: left;
+}
+
 .featuredInfoRightBottom {
     height: 33%;
 }
@@ -315,13 +376,18 @@ h7 {
 .featuredSkills {
     padding: 0;
     color: rgb(16, 119, 150);
-    margin: 10px 0 10px 20px;
+    margin: 10px 20px 10px 20px;
     font-size: 20px;
     /* font-weight: bold; */
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+}
+
+.leftKeySkill {
+    align-items: flex-start;
+    margin-left: 20px;
 }
 
 .featuredSkill {
@@ -332,6 +398,16 @@ h7 {
     font-size: 14px;
     padding: 7px 14px;
     margin: 7px 0 7px 14px;
+}
+
+.featuredSkillLeft {
+    background-color: rgba(147, 145, 150, 75%);
+    border-radius: 20px;
+    color: white;
+    border: 1px solid white;
+    font-size: 14px;
+    padding: 7px 14px;
+    margin: 7px 14px 7px 0px;
 }
 
 .featuredLinks {
