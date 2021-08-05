@@ -14,6 +14,67 @@ let featuredCards = document.getElementsByClassName('featuredCard');
 let featuredBtns = document.getElementsByClassName('featuredLinks');
 const featuredDescriptions = document.getElementsByClassName('featuredDescription');
 
+let featuredInfo = [
+    {
+        name: "Calculator",
+        id: "calc",
+        background: "Images/Calculator.png",
+        description: "A calculator that includes the four basic math functions, convertage to percentage, and invert positive/negative.",
+        skills: ["JavaScript", "HTML", "CSS"],
+        git: "",
+        live: ""
+    },
+    {
+        name: "Gif Memory Card Game",
+        id: "memory",
+        background: "Images/Memory\ Game.png",
+        description: "A game that creates and randomizes cards, and then waits for the user to find matching pairs.",
+        skills: ["APIs", "JavaScript", "HTML", "CSS"],
+        git: "",
+        live: ""
+    },{
+        name: "Small Business Website",
+        id: "smallBusinessWebsite",
+        background: "Images/Small\ Business\ Website.png",
+        description: "A single-page website template that highlights the background and services of a small business.",
+        skills: ["JavaScript", "HTML", "CSS"],
+        git: "",
+        live: ""
+    }
+]
+
+//create and populate cards
+// const createFeaturedCard = () => {
+//     for (let i = 0; i < featuredInfo.length; i++) {
+//         const ftGp = document.createElement('div');
+//         ftGp.classList.add('featuredGroup');
+//         const ftInfo = document.createElement('div');
+//         ftInfo.classList.add('featuredInfo');
+        
+        
+//         ftGp.appendChild(ftInfo);
+//         const h6 = document.createElement('h6');
+//         h6.innerHTML = featuredInfo[i].name;
+//         ftInfo.appendChild(h6);
+
+
+//         const p = document.createElement('p');
+//         p.classList.add('featuredDescription');
+//         p.innerHTML = featuredInfo[i].description;
+//         ftInfo.appendChild(p);
+
+//         document.createElement('div');
+
+
+//         //determine left/right positioning
+//         // if (i % 2 == 0) {
+
+//         // }
+//     }
+// }
+
+// createFeaturedCard();
+
 // let projectInfo = [
 //     {
 //         name: "Simon Says",
@@ -163,3 +224,56 @@ for (let i = 0; i < featureds.length; i++) {
 // }
 
 // animateDiv();
+
+
+
+//FOLLOWING THESE INSTRUCTIONS: https://webdesign.tutsplus.com/tutorials/animate-on-scroll-with-javascript--cms-36671
+
+//for each of featuredInfo, if i is even, slide from right
+//for each of featuredCard, if i is even, slide from left
+
+//for each of featuredCard, if i is odd, slide from right
+//for each of featuredInfo, if i is odd, slide from left
+
+
+// const visibleElement = (element, scroll = 100) => {
+//     const elementTop = element.getBoundingClientRect().top;
+
+//     return (elementTop <= (window.innerHeight || document.documentElement.clientHeight))
+// }
+
+
+
+// const scrollOffset = 100;
+ 
+// // const scrollElement = document.querySelector(".featuredGroup");
+// for (scrollElement of featureds) {
+//     const elementInView = (el, offset = 0) => {
+//         const elementTop = el.getBoundingClientRect().top;
+       
+//         return (
+//           elementTop <= 
+//           ((window.innerHeight || document.documentElement.clientHeight) - offset)
+//         );
+//       };
+       
+//       const displayScrollElement = () => {
+//         scrollElement.classList.add('scrolled');
+//       }
+       
+//       const hideScrollElement = () => {
+//         scrollElement.classList.remove('scrolled');
+//       }
+       
+//       const handleScrollAnimation = () => {
+//         if (elementInView(scrollElement, scrollOffset)) {
+//             displayScrollElement();
+//         } else {
+//           hideScrollElement();
+//         }
+//       }
+       
+//       window.addEventListener('scroll', () => {
+//         handleScrollAnimation();
+//       })
+// }
