@@ -13,6 +13,9 @@ let featureds = document.getElementsByClassName('featuredGroup');
 let featuredCards = document.getElementsByClassName('featuredCard');
 let featuredBtns = document.getElementsByClassName('featuredLinks');
 const featuredDescriptions = document.getElementsByClassName('featuredDescription');
+let skillCards = document.getElementsByClassName('skillCard');
+let skillIcons = document.getElementsByClassName('skillIcon');
+
 
 let featuredInfo = [
     {
@@ -207,6 +210,28 @@ for (let i = 0; i < featureds.length; i++) {
     })
 }
 
+// event listener for hover over skill cards
+for (let i = 0; i < skillCards.length; i++) {
+    skillCards[i].addEventListener('mouseover', function animateSkills() {
+        skillCards[i].style.transform = "translateY(-10px)";
+        skillCards[i].style.boxShadow = "0px 5px 15px";
+        // skillCards[i].style.alignItems = "stretch";
+        // featuredBtns[i].style.display = "flex";
+        skillIcons[i].style.filter = "none";
+        // featuredDescriptions[i].style.backgroundColor = "#b3b3b3";
+    })
+}
+
+for (let i = 0; i < skillCards.length; i++) {
+    skillCards[i].addEventListener('mouseleave', function animateSkills() {
+        // featuredBtns[i].style.display = "none";
+        skillCards[i].style.transform = "translateY(0px)";
+        // featureds[i].style.alignItems = "center";
+        skillCards[i].style.boxShadow = "";
+        skillIcons[i].style.filter = "";
+        // featuredDescriptions[i].style.backgroundColor = "";
+    })
+}
 
 
 //trying to make each child of homepage's text animate

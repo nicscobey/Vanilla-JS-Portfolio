@@ -156,8 +156,9 @@ a {
 }
 
 #hello {
-    font-size: 30px;
-    color: black;
+    font-size: 40px;
+    color: white;
+    font-weight: bold;
 }
 
 #titles {
@@ -185,8 +186,10 @@ a {
 h1 {
     text-align: center;
     font-family: 'Syncopate', sans-serif;
-    color: #7CEA9C;
+    color: #F6D43C;
+    color: #55D6BE;
     font-size: 70px;
+    margin: 0;
 }
 
 h2 {
@@ -198,9 +201,10 @@ h3 {
     text-align: center;
     font-family: 'Ubuntu Mono', monospace;
     color: #7CF0BD;
+    color: white;
     font-size: 40px;
     margin-top: 100px;
-    margin-bottom: 50px;
+    margin-bottom: 120px;
     font-weight: normal;
 }
 
@@ -313,6 +317,8 @@ button:hover {
 
 #projects {
     background: linear-gradient(to bottom, black, #15616D);
+    background: linear-gradient(to bottom, #0b373d, #15616D);
+    /* background: #15616D; */
     background-attachment: fixed;
     display: none;
     flex-direction: column;
@@ -523,27 +529,6 @@ iframe {
     /* height: 1100px; */
 }
 
-#contact {
-    display: none;
-    background: orangered;
-}
-
-h4 {
-    color: white;
-    font-size: 25px;
-    background-color: rgba(0, 0, 0, 75%);
-    border-radius: 50px;
-    border: 1px solid white;
-    padding: 8px 15px 8px 15px;
-}
-
-h5 {
-    margin: 0;
-    font-size: 16px;
-    color: #15616D;
-
-}
-
 #projectsGrid {
     display: flex;
     max-width: 1200px;
@@ -617,24 +602,143 @@ hr {
     width: 85%;
 }
 
+#skills {
+    display: none;
+    background: linear-gradient(to bottom, #0b373d, #15616D);
+}
+
+i {
+    font-size: 160px;
+}
+
+.skillCard {
+    width: 20vw;
+    text-align: center;
+    max-width: 250px;
+    transition-duration: .5s;
+    box-shadow: 0px 1px 5px;
+    margin: 50px;
+    padding: 20px;
+    background-color: white;
+    transition-duration: .5s;
+
+}
+
+.skillIcon {
+    height: 100px;
+    /* display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    transition-duration: .5s;
+    background-position: center;
+    background-size: cover;
+    align-items: center; */
+    filter: grayscale(100%);
+    transition-duration: .5s;
+}
+
+.skillDescription {
+    padding: 0;
+    color: black;
+    margin: 10px;
+}
+
+h2 {
+    margin: 10 0 0 0;
+    font-size: 16px;
+    color: #15616D;
+}
+
+#contact {
+    display: none;
+    background: linear-gradient(to bottom, black, #15616D);
+    background: linear-gradient(to bottom, black, rgba(179,179,179));
+    background: linear-gradient(to bottom, #15616D, #7CF0BD);
+    background: linear-gradient(to bottom, #b49403, #F6D43C);
+    background: linear-gradient(to bottom, black, rgba(41, 41, 41));
+    background: linear-gradient(to bottom, #0b373d, #15616D);
+    /* display: flex; */
+    position: absolute;
+    top: 0;
+    bottom: 0; 
+}
+
+#contactFlex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    /* padding-right: 0;
+    padding-left: 0; */
+    /* height: 100vh; */
+
+}
+/* #contactPage {
+    flex-direction: column;   
+    position: relative;
+    bottom: 0;
+} */
+
+h4 {
+    color: white;
+    font-size: 25px;
+    background-color: rgba(0, 0, 0, 75%);
+    border-radius: 50px;
+    border: 1px solid white;
+    padding: 8px 15px 8px 15px;
+}
+
+h5 {
+    margin: 0;
+    font-size: 16px;
+    color: #15616D;
+}
+
 #contactBar {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    max-width: 800px;
-    border: 1px solid black;
+    max-width: 1000px;
+    /* border: 1px solid black; */
     justify-items: center;
     /* justify-content: center; */
     margin-right: auto;
     margin-left: auto;
+    grid-gap: 20px;
+    height: 200px;
+    /* padding-bottom: 50px; */
 }
 
 .contactTab {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* justify-content: center; */
+    justify-content: center;
+    /* justify-items: ; */
     text-align: center;
+    background-color: #F6D43C;
+    color: black;
+    width: 100%;
+    transition-duration: .5s;
+    height: 100%;
+
     /* margin: 50px; */
+}
+
+.contactTab:hover {
+    background-color: rgba(179,179,179);
+    box-shadow: 0px 5px 15px;
+    transform: translateY(-10px);
+}
+
+.contactImg {
+    height: 100px;
+
+}
+
+.blackText {
+    color: black;
 }
 
 #email {
@@ -651,17 +755,53 @@ hr {
 
 #contactForm {
     text-align: center;
-    margin-top: 50px;
+    /* margin-top: 50px; */
     padding-top: 50px;
     padding-bottom: 50px;
+    /* background-color: #F6D43C; */
+    background-color: #55D6BE;
     background-color: #15616D;
-    
+    background-color: #F6D43C;
+    background-color: rgba(179,179,179);
+    background-color: #15616D;
+    background-color: #F6D43C;
+
+    /* background-color: rgba(41, 41, 41); */
+    /* background: linear-gradient(to bottom, black, rgba(179,179,179)); */
+
+    max-width: 800px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 50px;
+    /* position: relative;
+    bottom: 0; */
 }
 
 input {
     font-size: 16px;
+    width: 682px;
+    padding: 10px;
+    margin: 5px;
 }
 
+textarea {
+    width: 700px;
+    max-width: 700px;
+    margin: 5px;
+
+}
+
+#formSubmit {
+    width: 300px;
+    background-color: #F6D43C;
+    background-color: #55D6BE;
+    background-color: #15616D;
+    background-color: black;
+    color: white;
+    /* font-weight: bold; */
+    /* background-color: rgba(179,179,179); */
+    border: none;
+}
 
 @media (max-width: 1200px) {
     #projectGrid {
