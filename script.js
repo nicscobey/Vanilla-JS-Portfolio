@@ -12,9 +12,12 @@ let featureds = document.getElementsByClassName('featuredGroup');
 // let featuredNames = document.querySelectorAll('h4');
 let featuredCards = document.getElementsByClassName('featuredCard');
 let featuredBtns = document.getElementsByClassName('featuredLinks');
+let featuredSkills = document.getElementsByClassName('featuredSkill');
 const featuredDescriptions = document.getElementsByClassName('featuredDescription');
 let skillCards = document.getElementsByClassName('skillCard');
 let skillIcons = document.getElementsByClassName('skillIcon');
+const skillDescriptions = document.getElementsByClassName('skillDescription');
+const h2 = document.querySelectorAll('h2');
 
 
 let featuredInfo = [
@@ -210,6 +213,19 @@ for (let i = 0; i < featureds.length; i++) {
     })
 }
 
+for (let i =0; i < skillCards.length; i++) {
+    // if (i%2 === 0) {
+        skillCards[i].style.background = "linear-gradient(to bottom, #24a6b9, #15616D)";
+        skillDescriptions[i].style.color = "white";
+        h2[i].style.color = "#F6D43C";
+    // }
+    // else {
+    //     skillCards[i].style.background = "linear-gradient(to right, #F6D43C, #a89128)";
+    //     h2[i].style.color = "#15616D";
+
+    // }
+}
+
 // event listener for hover over skill cards
 for (let i = 0; i < skillCards.length; i++) {
     skillCards[i].addEventListener('mouseover', function animateSkills() {
@@ -219,6 +235,9 @@ for (let i = 0; i < skillCards.length; i++) {
         // featuredBtns[i].style.display = "flex";
         skillIcons[i].style.filter = "none";
         // featuredDescriptions[i].style.backgroundColor = "#b3b3b3";
+        // skillCards[i].style.background = "white";
+        // skillDescriptions[i].style.color = "black";
+        // h2[i].style.color = "black";
     })
 }
 
@@ -230,6 +249,16 @@ for (let i = 0; i < skillCards.length; i++) {
         skillCards[i].style.boxShadow = "";
         skillIcons[i].style.filter = "";
         // featuredDescriptions[i].style.backgroundColor = "";
+        // if (i%2 === 0) {
+        //     skillCards[i].style.background = "linear-gradient(to right, #24a6b9, #15616D)";
+        //     skillDescriptions[i].style.color = "white";
+        //     h2[i].style.color = "#F6D43C";
+        // }
+        // else {
+        //     skillCards[i].style.background = "linear-gradient(to right, #F6D43C, #a89128)";
+        //     h2[i].style.color = "#15616D";
+        // }
+
     })
 }
 

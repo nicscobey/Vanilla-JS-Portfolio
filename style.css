@@ -27,7 +27,7 @@ nav {
     margin: 0;
     width: 100%;
     height: 60px;
-    background-color: rgba(0, 0, 0);
+    /* background-color: rgba(0, 0, 0); */
 }
 
 #leftNav {
@@ -187,7 +187,7 @@ h1 {
     text-align: center;
     font-family: 'Syncopate', sans-serif;
     color: #F6D43C;
-    color: #55D6BE;
+    /* color: #55D6BE; */
     font-size: 70px;
     margin: 0;
 }
@@ -211,11 +211,12 @@ h3 {
 
 #about {
     /* background-image: url('Images/IMG_0621 dark.jpg'); */
-    background: linear-gradient(to bottom, black, rgba(41, 41, 41));
+    /* background: linear-gradient(to bottom, black, rgba(41, 41, 41)); */
     text-align: left;
     display: none; 
     /* justify-content: flex-end; */
     background-position: center;
+    background-color: rgba(41, 41, 41);
 }
 
 #aboutFlex {
@@ -316,8 +317,9 @@ button:hover {
 }
 
 #projects {
-    background: linear-gradient(to bottom, black, #15616D);
-    background: linear-gradient(to bottom, #0b373d, #15616D);
+    /* background: linear-gradient(to bottom, black, #15616D);
+    background: linear-gradient(to bottom, #0b373d, #15616D); */
+    background-color: rgb(41,41,41);
     /* background: #15616D; */
     background-attachment: fixed;
     display: none;
@@ -363,6 +365,16 @@ h7 {
     margin: 100px auto 200px auto;
     transition-duration: .5s;
     /* border-radius: 20px; */
+
+    padding: 20px;
+}
+
+.featuredGroupLeft {
+    background: linear-gradient(to right, #24a6b9, #15616D);
+}
+
+.featuredGroupRight {
+    background: linear-gradient(to left, #24a6b9, #15616D);
 }
 
 .featuredCard {
@@ -450,7 +462,7 @@ h7 {
     border: 1px solid white;
     font-size: 14px;
     padding: 7px 14px;
-
+    transition-duration: .5s;
 }
 
 .featuredSkillLeft {
@@ -512,7 +524,8 @@ h7 {
 #resume {
     text-align: center;
     display: none;
-    background: linear-gradient(to bottom, black, #15616D);
+    /* background: linear-gradient(to bottom, black, #15616D); */
+    background-color: rgb(41,41,41);
     height: 100vh;
 }
 
@@ -604,7 +617,8 @@ hr {
 
 #skills {
     display: none;
-    background: linear-gradient(to bottom, #0b373d, #15616D);
+    /* background: linear-gradient(to bottom, #0b373d, #15616D); */
+    background-color: rgb(41,41,41);
 }
 
 i {
@@ -619,8 +633,10 @@ i {
     box-shadow: 0px 1px 5px;
     margin: 50px;
     padding: 20px;
-    background-color: white;
-    transition-duration: .5s;
+    /* background-color: white;
+    background: linear-gradient(to right, #24a6b9, #15616D);
+    background: linear-gradient(to right, #F6D43C, #a89128); */
+    transition-duration: 1s;
 
 }
 
@@ -635,29 +651,35 @@ i {
     background-size: cover;
     align-items: center; */
     filter: grayscale(100%);
-    transition-duration: .5s;
+    transition-duration: 1s;
 }
 
 .skillDescription {
     padding: 0;
     color: black;
     margin: 10px;
+    transition-duration: 1s;
+
 }
 
 h2 {
     margin: 10 0 0 0;
-    font-size: 16px;
+    font-size: 18px;
     color: #15616D;
+    transition-duration: 1s;
+
 }
 
 #contact {
     display: none;
-    background: linear-gradient(to bottom, black, #15616D);
+    /* background: linear-gradient(to bottom, black, #15616D);
     background: linear-gradient(to bottom, black, rgba(179,179,179));
     background: linear-gradient(to bottom, #15616D, #7CF0BD);
     background: linear-gradient(to bottom, #b49403, #F6D43C);
     background: linear-gradient(to bottom, black, rgba(41, 41, 41));
-    background: linear-gradient(to bottom, #0b373d, #15616D);
+    background: linear-gradient(to bottom, #0b373d, #15616D); */
+    background-color: rgb(41,41,41);
+
     /* display: flex; */
     position: absolute;
     top: 0;
@@ -718,6 +740,8 @@ h5 {
     /* justify-items: ; */
     text-align: center;
     background-color: #F6D43C;
+    background: linear-gradient(to bottom, #24a6b9, #15616D);
+
     color: black;
     width: 100%;
     transition-duration: .5s;
