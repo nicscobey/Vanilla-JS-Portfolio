@@ -217,7 +217,7 @@ for (let i =0; i < skillCards.length; i++) {
     // if (i%2 === 0) {
         skillCards[i].style.background = "linear-gradient(to bottom, #24a6b9, #15616D)";
         skillDescriptions[i].style.color = "white";
-        h2[i].style.color = "#F6D43C";
+        // h2[i].style.color = "#F6D43C";
     // }
     // else {
     //     skillCards[i].style.background = "linear-gradient(to right, #F6D43C, #a89128)";
@@ -261,6 +261,21 @@ for (let i = 0; i < skillCards.length; i++) {
 
     })
 }
+
+//make menu smaller when scroll down
+const menuCheckpoint = 60;
+
+window.addEventListener("scroll", () => {
+    let currentScroll = window.pageYOffset;
+    if (currentScroll > menuCheckpoint) {
+        document.querySelector("nav").style.backgroundColor = "rgba(0, 0, 0, 75%)";
+        document.querySelector("#menuBtn").style.backgroundColor = "rgba(0, 0, 0, 75%)";
+    } 
+    else {
+        document.querySelector("nav").style.backgroundColor = "";
+        document.querySelector("#menuBtn").style.backgroundColor = "";
+    }
+});
 
 
 //trying to make each child of homepage's text animate
