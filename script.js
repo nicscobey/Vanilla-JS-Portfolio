@@ -18,7 +18,7 @@ let skillCards = document.getElementsByClassName('skillCard');
 let skillIcons = document.getElementsByClassName('skillIcon');
 const skillDescriptions = document.getElementsByClassName('skillDescription');
 const h2 = document.querySelectorAll('h2');
-
+const ftProjects = document.getElementById('featuredProjects');
 
 let featuredInfo = [
     {
@@ -49,71 +49,106 @@ let featuredInfo = [
     }
 ]
 
-//create and populate cards
-// const createFeaturedCard = () => {
-//     for (let i = 0; i < featuredInfo.length; i++) {
-//         const ftGp = document.createElement('div');
-//         ftGp.classList.add('featuredGroup');
-//         const ftInfo = document.createElement('div');
-//         ftInfo.classList.add('featuredInfo');
-        
-        
-//         ftGp.appendChild(ftInfo);
-//         const h6 = document.createElement('h6');
-//         h6.innerHTML = featuredInfo[i].name;
-//         ftInfo.appendChild(h6);
+//CREATE FEATURED PROJECTS
+for (let i = 0; i < featuredInfo.length; i++) {
 
+    const newFtGp = document.createElement('div');
+    newFtGp.classList.add('featuredGroup');
+    ftProjects.appendChild(newFtGp);
+    
+    const addFeaturedCard = () => {
+        const newFtCard = document.createElement('div');
+        newFtCard.classList.add('featuredCard');
+        newFtCard.setAttribute('id', `${featuredInfo[i].id}`)
+        newFtCard.style.backgroundImage = `url('${featuredInfo[i].background}')`;
+        newFtGp.appendChild(newFtCard);
+        console.log(`url(${featuredInfo[i].background})`);
+    
+        const newFtLinks = document.createElement('div');
+        newFtLinks.classList.add('featuredLinks');
+        newFtCard.appendChild(newFtLinks);
+    
+        const ftLinkA = document.createElement('a');
+        ftLinkA.classList.add('liveDemo', 'featuredLink');
+        ftLinkA.innerHTML = "Live Demo";
+        ftLinkA.setAttribute('href', `${featuredInfo[i].live}`);
+        ftLinkA.setAttribute('target', "_blank");
+        newFtLinks.appendChild(ftLinkA);
+    
+        const ftLinkB = document.createElement('a');
+        ftLinkB.classList.add('gitHub', 'featuredLink');
+        ftLinkB.innerHTML = "GitHub";
+        ftLinkB.setAttribute('href', `${featuredInfo[i].git}`);
+        ftLinkB.setAttribute('target', "_blank");
+        newFtLinks.appendChild(ftLinkB);    
 
-//         const p = document.createElement('p');
-//         p.classList.add('featuredDescription');
-//         p.innerHTML = featuredInfo[i].description;
-//         ftInfo.appendChild(p);
+        if (i%2 === 0) {
+            newFtGp.classList.add('featuredGroupLeft');
+            newFtCard.classList.add('featuredCardLeft');
+        }
+        else {
+            newFtGp.classList.add('featuredGroupRight');
+            newFtCard.classList.add('featuredCardRight');
+        }
+    }
 
-//         document.createElement('div');
+    const addFeaturedInfo = () => {
+        const ftInfo = document.createElement('div');
+        ftInfo.classList.add('featuredInfo');
+        newFtGp.appendChild(ftInfo);
 
+        const newh6 = document.createElement('h6');
+        newh6.innerHTML = `${featuredInfo[i].name}`
+        ftInfo.appendChild(newh6);
 
-//         //determine left/right positioning
-//         // if (i % 2 == 0) {
+        const newFtDesc = document.createElement('p');
+        newFtDesc.classList.add('featuredDescription');
+        newFtDesc.innerHTML = `${featuredInfo[i].description}`;
+        ftInfo.appendChild(newFtDesc);
 
-//         // }
-//     }
-// }
+        const newFtInfoSection = document.createElement('div');
+        newFtInfoSection.classList.add('featuredInfoRightBottom');
+        ftInfo.appendChild(newFtInfoSection);
 
-// createFeaturedCard();
+        const newh7 = document.createElement('h7');
+        newh7.innerHTML = "Key Skills:";
+        newFtInfoSection.appendChild(newh7);
 
-// let projectInfo = [
-//     {
-//         name: "Simon Says",
-//         image: "Images/Simon Says Game.png",
-//         skills: "HTML, CSS, JavaScript",
-//         description: "An interactive app that builds a pattern and tests the user's ability to repeat that pattern.",
-//         appLink: "google.com",
-//         gitHubFront: "yahoo.com",
-//         gitHubBack: "msn.com"
-//     },
-//     {
-//         name: "Small Business Website",
-//         image: "Images/Small Business Website.png",
-//         skills: "HTML, CSS, JavaScript",
-//         description: "A website highlighting the services and top reviews of a small business.",
-//         appLink: "google.com",
-//         gitHubFront: "yahoo.com",
-//         gitHubBack: "msn.com"
-//     },
-// ];
+        const ftSkills = document.createElement('div');
+        ftSkills.classList.add('featuredSkills');
+        newFtInfoSection.appendChild(ftSkills);
 
+        for (let j = 0; j < featuredInfo[i].skills.length; j++) {
+            const ftSkill = document.createElement('p');
+            ftSkill.classList.add('featuredSkill');
+            ftSkill.innerHTML = `${featuredInfo[i].skills[j]}`;
+            if (i%2 ===0) {
+                ftSkill.classList.add('featuredSkillRight');
+            }
+            else {
+                ftSkill.classList.add('featuredSkillLeft');
+            }
+            ftSkills.appendChild(ftSkill);
+        }
 
-// console.log(pages);
-// console.log(pages[0]);
-// console.log('pages[0] is ' + pages[0]);
-// console.log(projects);
+        if (i%2 === 0) {
+            ftInfo.classList.add('featuredInfoRight');
+        }
+        else {
+            ftInfo.classList.add('featuredInfoLeft');
+            newh7.classList.add('leftKeySkill');
+        }
+    }
 
-
-
-//consider adding animation when clicking to new tab
-//if next tap is greater page number, slide left
-//if next tab is smaller page number, slide right
-//(use position to move it right or left)
+    if (i%2 === 0) {
+        addFeaturedCard();
+        addFeaturedInfo();
+    }
+    else {
+        addFeaturedInfo();
+        addFeaturedCard();
+    }
+}
 
 
 //functioning nav links
@@ -214,16 +249,8 @@ for (let i = 0; i < featureds.length; i++) {
 }
 
 for (let i =0; i < skillCards.length; i++) {
-    // if (i%2 === 0) {
         skillCards[i].style.background = "linear-gradient(to bottom, #24a6b9, #15616D)";
         skillDescriptions[i].style.color = "white";
-        // h2[i].style.color = "#F6D43C";
-    // }
-    // else {
-    //     skillCards[i].style.background = "linear-gradient(to right, #F6D43C, #a89128)";
-    //     h2[i].style.color = "#15616D";
-
-    // }
 }
 
 // event listener for hover over skill cards
@@ -231,13 +258,7 @@ for (let i = 0; i < skillCards.length; i++) {
     skillCards[i].addEventListener('mouseover', function animateSkills() {
         skillCards[i].style.transform = "translateY(-10px)";
         skillCards[i].style.boxShadow = "0px 5px 15px";
-        // skillCards[i].style.alignItems = "stretch";
-        // featuredBtns[i].style.display = "flex";
         skillIcons[i].style.filter = "none";
-        // featuredDescriptions[i].style.backgroundColor = "#b3b3b3";
-        // skillCards[i].style.background = "white";
-        // skillDescriptions[i].style.color = "black";
-        // h2[i].style.color = "black";
     })
 }
 
@@ -248,17 +269,6 @@ for (let i = 0; i < skillCards.length; i++) {
         // featureds[i].style.alignItems = "center";
         skillCards[i].style.boxShadow = "";
         skillIcons[i].style.filter = "";
-        // featuredDescriptions[i].style.backgroundColor = "";
-        // if (i%2 === 0) {
-        //     skillCards[i].style.background = "linear-gradient(to right, #24a6b9, #15616D)";
-        //     skillDescriptions[i].style.color = "white";
-        //     h2[i].style.color = "#F6D43C";
-        // }
-        // else {
-        //     skillCards[i].style.background = "linear-gradient(to right, #F6D43C, #a89128)";
-        //     h2[i].style.color = "#15616D";
-        // }
-
     })
 }
 
