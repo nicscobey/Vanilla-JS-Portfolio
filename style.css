@@ -780,6 +780,8 @@ textarea {
     .featuredInfo {
         height: auto;
         width: 90%;
+        margin-right: auto;
+        margin-left: auto;
     }
 
     .featuredInfoRightBottom {
@@ -814,7 +816,8 @@ textarea {
     }
 
     .featuredCard {
-
+        margin-right: auto;
+        margin-left: auto;
         height: 150px;
         width: 150px;
     }
