@@ -45,7 +45,7 @@
             <p id="titles" class="invisible">Technical Career Coach. Software Developer.</p>
             <p id="shortBlurb" class="invisible">I promote global justice through coding and coaching.</p>
             <p id="shortBlurb" class="invisible">Lover of dogs, outdoors, weight-lifting, and piano.</p>
-            <a href="" class="coloredLink invisible" id="learnMore">Learn more ></a>    
+            <a onclick="openPage(1)" class="coloredLink invisible" id="learnMore">Learn more ></a>    
         </div>
     </div>
     <div id="about" class="page">
@@ -58,87 +58,23 @@
             <div id="aboutText">
                 <p id="tagline">I promote global justice through coding and coaching.</p>
                 <p id="aboutParagraph">Hey there! Great to meet you!</p>
-                <p id="aboutParagraph">I'm a software developer with a background in education and human services. I've spent my career on the frontlines of some of the USA's most challenging issues. Seeing the opportunity to amplify that change through technology, I pivoted into software development.</p>
-                <p id="aboutParagraph">Now, I use my software development expertise to help mission-driven companies create technology that will have a broader impact on the global community.</p>
-                <p id="aboutParagraph">Interested in working together? <a href="" class="coloredLink">Let's chat</a>!</p>
+                <p id="aboutParagraph">I'm a software developer and technical career coach with a background in education and human services. I've spent my career on the frontlines of some of the USA's most challenging issues. Seeing the opportunity to amplify that change, I expanded my skills into software development.</p>
+                <p id="aboutParagraph">Now, I use coding and coaching to help mission-driven companies make a positive impact on the global community.</p>
+                <p id="aboutParagraph">Interested in working together? <a onclick="openPage(5)" class="coloredLink">Let's chat</a>!</p>
             </div>
         </div>
     </div>
     <div id="projects" class="page">
         <h3>Featured Projects</h3>
-        <div id="featuredProjects">
-            <!-- <div class="featuredGroup featuredGroupLeft">
-                <div class="featuredCard featuredCardLeft" id="calc">
-                    <div class="featuredLinks">
-                        <a class="liveDemo featuredLink">Live Demo</a>
-                        <a class="gitHub featuredLink">GitHub</a>
-                    </div>
-                </div>
-                <div class="featuredInfo featuredInfoRight">
-                    <h6>Calculator</h6>
-                    <p class="featuredDescription">A calculator that includes the four basic math functions, convertage to percentage, and invert positive/negative.</p>
-                    <div class="featuredInfoRightBottom">
-                        <h7>Key Skills:</h7>
-                        <div class="featuredSkills">
-                            <p class="featuredSkill featuredSkillRight">JavaScript</p>
-                            <p class="featuredSkill featuredSkillRight">HTML</p>
-                            <p class="featuredSkill featuredSkillRight">CSS</p>
-                        </div>
-                    </div>
-                    
-                </div> 
-            </div>
-            <div class="featuredGroup featuredGroupRight">
-                <div class="featuredInfo featuredInfoLeft">
-                    <h6>Gif Memory Card Game</h6>
-                    <p class="featuredDescription featuredDescriptionLeft">A game that creates and randomizes cards, and then waits for the user to find matching pairs.</p>
-                    <div class="featuredInfoRightBottom">
-                        <h7 class="leftKeySkill">Key Skills:</h7>
-                        <div class="featuredSkills">
-                            <p class="featuredSkill featuredSkillLeft">APIs</p>
-                            <p class="featuredSkill featuredSkillLeft">HTML</p>
-                            <p class="featuredSkill featuredSkillLeft">JavaScript</p>
-                            <p class="featuredSkill featuredSkillLeft">CSS</p>
-                        </div>
-                    </div>
-                </div> 
-                <div class="featuredCard featuredCardRight" id="memory">
-                    <div class="featuredLinks">
-                        <a class="liveDemo featuredLink">Live Demo</a>
-                        <a class="gitHub featuredLink">GitHub</a>
-                    </div>
-                </div>                
-            </div>
-            <div class="featuredGroup featuredGroupLeft">
-                <div class="featuredCard featuredCardLeft" id="smallBusinessWebsite">
-                    <div class="featuredLinks">
-                        <a class="liveDemo featuredLink">Live Demo</a>
-                        <a class="gitHub featuredLink">GitHub</a>
-                    </div>
-                </div>
-                <div class="featuredInfo featuredInfoRight">
-                    <h6>Small Business Website</h6>
-                    <p class="featuredDescription">A single-page website template that highlights the background and services of a small business.</p>
-                    <div class="featuredInfoRightBottom">
-                        <h7>Key Skills:</h7>
-                        <div class="featuredSkills">
-                            <p class="featuredSkill featuredSkillRight">HTML</p>
-                            <p class="featuredSkill featuredSkillRight">JavaScript</p>
-                            <p class="featuredSkill featuredSkillRight">CSS</p>
-                        </div>
-                    </div>
-                    
-                </div> 
-            </div> -->
-        </div>
+        <div id="featuredProjects"></div>
         <h3>Additional Projects</h3>
         <div id="projectsGrid">
             <div class="projectGroup">
                 <div class="projectCard" id="simon">
                     <h4>Simon Says</h4>
                     <div class="projectBtns">
-                        <a class="liveDemo projectLink">Live Demo</a>
-                        <a class="gitHub projectLink">GitHub</a>
+                        <a href = "https://nicscobey.github.io/SimonSaysGame/" target="_blank" class="liveDemo projectLink">Live Demo</a>
+                        <a href="https://github.com/nicscobey/SimonSaysGame" target="_blank"  class="gitHub projectLink">GitHub</a>
                     </div>
                 </div>
                 <p class="projectDescription">An interactive game that generates a pattern and tests a user's ability to repeat that pattern.</p>
@@ -154,8 +90,8 @@
                 <div class="projectCard" id="starwars">
                     <h4>Jedi Class Quiz</h4>
                     <div class="projectBtns">
-                        <a class="liveDemo projectLink">Live Demo</a>
-                        <a class="gitHub projectLink">GitHub</a>
+                        <a href="https://nicscobey.github.io/JediClassQuiz/" target="_blank" class="liveDemo projectLink" >Live Demo</a>
+                        <a href="https://github.com/nicscobey/JediClassQuiz" target="_blank"  class="gitHub projectLink">GitHub</a>
                     </div>
                 </div>
                 <p class="projectDescription">A quiz that tracks a user's responses and calculates an output.</p>
@@ -175,25 +111,28 @@
             <div class="skillCard">
                 <i class="devicon-javascript-plain skillIcon"></i>           
                 <h2>JavaScript</h2>
-                <p class="skillDescription">An interactive game that generates a pattern and tests a user's ability to repeat that pattern.</p>
+                <!-- <p class="skillDescription">An interactive game that generates a pattern and tests a user's ability to repeat that pattern.</p> -->
             </div>
             <div class="skillCard">
                 <i class="devicon-css3-plain-wordmark skillIcon"></i>               
                 <h2>CSS</h2>
-                <p class="skillDescription">An interactive game that generates a pattern and tests a user's ability to repeat that pattern.</p>
+                <!-- <p class="skillDescription">An interactive game that generates a pattern and tests a user's ability to repeat that pattern.</p> -->
             </div>
             <div class="skillCard">
                 <i class="devicon-html5-plain-wordmark skillIcon"></i>           
                 <h2>HTML</h2>
-                <p class="skillDescription">An interactive game that generates a pattern and tests a user's ability to repeat that pattern.</p>
+                <!-- <p class="skillDescription">An interactive game that generates a pattern and tests a user's ability to repeat that pattern.</p> -->
             </div>
             <div class="skillCard">
-                <i class="devicon-jquery-plain skillIcon"></i>
-                </svg>                
+                <i class="devicon-jquery-plain skillIcon"></i>       
                 <h2>jQuery</h2>
-                <p class="skillDescription">An interactive game that generates a pattern and tests a user's ability to repeat that pattern.</p>
+                <!-- <p class="skillDescription">An interactive game that generates a pattern and tests a user's ability to repeat that pattern.</p> -->
             </div>
-
+            <div class="skillCard">
+                <i class="devicon-bootstrap-plain skillIcon"></i>            
+                <h2>Bootstrap</h2>
+                <!-- <p class="skillDescription">An interactive game that generates a pattern and tests a user's ability to repeat that pattern.</p> -->
+            </div>
         </div>
     </div>
     <div id="resume" class="page">

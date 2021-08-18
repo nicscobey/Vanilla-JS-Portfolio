@@ -16,10 +16,9 @@ let featuredSkills = document.getElementsByClassName('featuredSkill');
 const featuredDescriptions = document.getElementsByClassName('featuredDescription');
 let skillCards = document.getElementsByClassName('skillCard');
 let skillIcons = document.getElementsByClassName('skillIcon');
-const skillDescriptions = document.getElementsByClassName('skillDescription');
-const h2 = document.querySelectorAll('h2');
-const ftProjects = document.getElementById('featuredProjects');
-
+let skillDescriptions = document.getElementsByClassName('skillDescription');
+let h2 = document.querySelectorAll('h2');
+let ftProjects = document.getElementById('featuredProjects');
 let featuredInfo = [
     {
         name: "Calculator",
@@ -49,168 +48,134 @@ let featuredInfo = [
     }
 ]
 
+const addFeaturedCard = (newFtGp, i) => {
+    const newFtCard = document.createElement('div');
+    newFtCard.classList.add('featuredCard');
+    newFtCard.setAttribute('id', `${featuredInfo[i].id}`)
+    newFtCard.style.backgroundImage = `url('${featuredInfo[i].background}')`;
+    newFtGp.appendChild(newFtCard);
+
+    const newFtLinks = document.createElement('div');
+    newFtLinks.classList.add('featuredLinks');
+    newFtCard.appendChild(newFtLinks);
+
+    const ftLinkA = document.createElement('a');
+    ftLinkA.classList.add('liveDemo', 'featuredLink');
+    ftLinkA.innerHTML = "Live Demo";
+    ftLinkA.setAttribute('href', `${featuredInfo[i].live}`);
+    ftLinkA.setAttribute('target', "_blank");
+    newFtLinks.appendChild(ftLinkA);
+
+    const ftLinkB = document.createElement('a');
+    ftLinkB.classList.add('gitHub', 'featuredLink');
+    ftLinkB.innerHTML = "GitHub";
+    ftLinkB.setAttribute('href', `${featuredInfo[i].git}`);
+    ftLinkB.setAttribute('target', "_blank");
+    newFtLinks.appendChild(ftLinkB);    
+
+    if (i%2 === 0) {
+        newFtGp.classList.add('featuredGroupLeft');
+        newFtCard.classList.add('featuredCardLeft');
+    }
+    else {
+        newFtGp.classList.add('featuredGroupRight');
+        newFtCard.classList.add('featuredCardRight');
+    }
+}
+
+const addFeaturedInfo = (newFtGp, i) => {
+    const ftInfo = document.createElement('div');
+    ftInfo.classList.add('featuredInfo');
+    newFtGp.appendChild(ftInfo);
+
+    const newh6 = document.createElement('h6');
+    newh6.innerHTML = `${featuredInfo[i].name}`
+    ftInfo.appendChild(newh6);
+
+    const newFtDesc = document.createElement('p');
+    newFtDesc.classList.add('featuredDescription');
+    newFtDesc.innerHTML = `${featuredInfo[i].description}`;
+    ftInfo.appendChild(newFtDesc);
+
+    const newFtInfoSection = document.createElement('div');
+    newFtInfoSection.classList.add('featuredInfoRightBottom');
+    ftInfo.appendChild(newFtInfoSection);
+
+    const newh7 = document.createElement('h7');
+    newh7.innerHTML = "Key Skills:";
+    newFtInfoSection.appendChild(newh7);
+
+    const ftSkills = document.createElement('div');
+    ftSkills.classList.add('featuredSkills');
+    newFtInfoSection.appendChild(ftSkills);
+
+    for (let j = 0; j < featuredInfo[i].skills.length; j++) {
+        const ftSkill = document.createElement('p');
+        ftSkill.classList.add('featuredSkill');
+        ftSkill.innerHTML = `${featuredInfo[i].skills[j]}`;
+        if (i%2 ===0) {
+            ftSkill.classList.add('featuredSkillRight');
+        }
+        else {
+            ftSkill.classList.add('featuredSkillLeft');
+            newFtDesc.classList.add('featuredDescriptionLeft');
+        }
+        ftSkills.appendChild(ftSkill);
+    }
+
+    if (i%2 === 0) {
+        ftInfo.classList.add('featuredInfoRight');
+    }
+    else {
+        ftInfo.classList.add('featuredInfoLeft');
+        newh7.classList.add('leftKeySkill');
+    }
+}
+
+const setFeaturedProjectOrder = () => {
+    let h7 = document.querySelectorAll('h7');
+    
+    for (let i = 0; i < featureds.length; i++) {
+        if (window.innerWidth < 800) {
+            featureds[i].style.order = "0";
+            featuredCards[i].style.order = "1";
+            h7[i].classList.add('leftKeySkill');
+       }
+        else  {
+            featureds[i].style.order = "";
+            featuredCards[i].style.order = "";
+            if ((i % 2 === 0)) {
+                h7[i].classList.remove('leftKeySkill');
+            }        
+        }
+    }
+}
+
 //CREATE FEATURED PROJECTS
 const createFtProjects = () => {
     for (let i = 0; i < featuredInfo.length; i++) {
-
-    const newFtGp = document.createElement('div');
-    newFtGp.classList.add('featuredGroup');
-    ftProjects.appendChild(newFtGp);
-    
-    const addFeaturedCard = () => {
-        const newFtCard = document.createElement('div');
-        newFtCard.classList.add('featuredCard');
-        newFtCard.setAttribute('id', `${featuredInfo[i].id}`)
-        newFtCard.style.backgroundImage = `url('${featuredInfo[i].background}')`;
-        newFtGp.appendChild(newFtCard);
-        console.log(`url(${featuredInfo[i].background})`);
-    
-        const newFtLinks = document.createElement('div');
-        newFtLinks.classList.add('featuredLinks');
-        newFtCard.appendChild(newFtLinks);
-    
-        const ftLinkA = document.createElement('a');
-        ftLinkA.classList.add('liveDemo', 'featuredLink');
-        ftLinkA.innerHTML = "Live Demo";
-        ftLinkA.setAttribute('href', `${featuredInfo[i].live}`);
-        ftLinkA.setAttribute('target', "_blank");
-        newFtLinks.appendChild(ftLinkA);
-    
-        const ftLinkB = document.createElement('a');
-        ftLinkB.classList.add('gitHub', 'featuredLink');
-        ftLinkB.innerHTML = "GitHub";
-        ftLinkB.setAttribute('href', `${featuredInfo[i].git}`);
-        ftLinkB.setAttribute('target', "_blank");
-        newFtLinks.appendChild(ftLinkB);    
+        const newFtGp = document.createElement('div');
+        newFtGp.classList.add('featuredGroup');
+        ftProjects.appendChild(newFtGp);
 
         if (i%2 === 0) {
-            newFtGp.classList.add('featuredGroupLeft');
-            newFtCard.classList.add('featuredCardLeft');
+            addFeaturedCard(newFtGp, i);
+            addFeaturedInfo(newFtGp, i);
         }
         else {
-            newFtGp.classList.add('featuredGroupRight');
-            newFtCard.classList.add('featuredCardRight');
+            addFeaturedInfo(newFtGp, i);
+            addFeaturedCard(newFtGp, i);
         }
+
+        setFeaturedProjectOrder();
     }
-
-    const addFeaturedInfo = () => {
-        const ftInfo = document.createElement('div');
-        ftInfo.classList.add('featuredInfo');
-        newFtGp.appendChild(ftInfo);
-
-        const newh6 = document.createElement('h6');
-        newh6.innerHTML = `${featuredInfo[i].name}`
-        ftInfo.appendChild(newh6);
-
-        const newFtDesc = document.createElement('p');
-        newFtDesc.classList.add('featuredDescription');
-        newFtDesc.innerHTML = `${featuredInfo[i].description}`;
-        ftInfo.appendChild(newFtDesc);
-
-        const newFtInfoSection = document.createElement('div');
-        newFtInfoSection.classList.add('featuredInfoRightBottom');
-        ftInfo.appendChild(newFtInfoSection);
-
-        const newh7 = document.createElement('h7');
-        newh7.innerHTML = "Key Skills:";
-        newFtInfoSection.appendChild(newh7);
-
-        const ftSkills = document.createElement('div');
-        ftSkills.classList.add('featuredSkills');
-        newFtInfoSection.appendChild(ftSkills);
-
-        for (let j = 0; j < featuredInfo[i].skills.length; j++) {
-            const ftSkill = document.createElement('p');
-            ftSkill.classList.add('featuredSkill');
-            ftSkill.innerHTML = `${featuredInfo[i].skills[j]}`;
-            if (i%2 ===0) {
-                ftSkill.classList.add('featuredSkillRight');
-            }
-            else {
-                ftSkill.classList.add('featuredSkillLeft');
-            }
-            ftSkills.appendChild(ftSkill);
-        }
-
-        if(window.innerWidth > 800) {
-
-        }
-        
-        // if (i%2 === 0) {
-        //     ftInfo.classList.add('featuredInfoRight');
-        // }
-        // else {
-        //     ftInfo.classList.add('featuredInfoLeft');
-        //     newh7.classList.add('leftKeySkill');
-        // }
-
-        if(window.innerWidth > 800) {
-            if (i%2 === 0) {
-                ftInfo.classList.add('featuredInfoRight');
-            }
-            else {
-                ftInfo.classList.add('featuredInfoLeft');
-                newh7.classList.add('leftKeySkill');
-            }
-        }
-        else {
-            ftInfo.classList.add('featuredInfoLeft');
-            newh7.classList.add('leftKeySkill');
-        }
-    }
-    
-    if(window.innerWidth > 800) {
-        if (i%2 === 0) {
-            addFeaturedCard();
-            addFeaturedInfo();
-        }
-        else {
-            addFeaturedInfo();
-            addFeaturedCard();
-        }
-    }
-    else {
-        addFeaturedInfo();
-        addFeaturedCard();
-    }
-    
-}
 }
 
 createFtProjects();
 
-// //listen for window resize to create correct ftprojects
-// window.addEventListener('resize', () => {
-//     let windowSize = window.innerWidth;
-//     console.log(windowSize);
-//     if (windowSize < 800) {
-//         console.log('800!');
-//         // createFtProjects();
-
-//         //for each featured group, add order to featuredCard and featuredInfo
-
-//         //featuredGroup order should be 0, featuredCard should be 1
-        
-//         for (let i = 0; i < featureds.length; i++) {
-//             featureds[i].style.order = "0";
-//             featuredCards[i].style.order = "1";
-//         }
-        
-
-
-//     }
-//     else {
-//         for (let i = 0; i < featureds.length; i++) {
-//             featureds[i].style.order = "";
-//             featuredCards[i].style.order = "";
-//         }
-        
-//     }
-// });
-
-
-
-
+window.addEventListener('resize', () => {
+    setFeaturedProjectOrder();
+})
 
 //functioning nav links
 for (let i = 0; i < navLinks.length; i++) {
@@ -227,15 +192,15 @@ function openPage(i) {
     pages[i].style.display = "block";
     navLinks[i].style.textDecoration = "underline";
     navLinks[i].style.textDecorationThickness = "5px";
-    console.log(navLinks[i].innerHTML);
+    // console.log(navLinks[i].innerHTML);
     if (menuOpen) {
         menu.style.display = "none";
         openCloseMenu();
     }
     for(let j = 0; j < menuLinks.length; j++) {
         if (j !== i) {
-            console.log('j is ' + j);
-            console.log('i is ' + i);
+            // console.log('j is ' + j);
+            // console.log('i is ' + i);
             pages[j].style.display = "none";
             navLinks[j].style.textDecoration = "none";
         }
@@ -315,7 +280,7 @@ for (let i = 0; i < featureds.length; i++) {
 
 for (let i =0; i < skillCards.length; i++) {
         skillCards[i].style.background = "linear-gradient(to bottom, #24a6b9, #15616D)";
-        skillDescriptions[i].style.color = "white";
+        // skillDescriptions[i].style.color = "white";
 }
 
 // event listener for hover over skill cards
