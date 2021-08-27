@@ -439,6 +439,9 @@ h7 {
     background-image: url('Images/Star\ Wars.png');
 }
 
+#weather-app {
+    background-image: url('Images/WeatherWatch.png');
+}
 #resume {
     text-align: center;
     display: none;
