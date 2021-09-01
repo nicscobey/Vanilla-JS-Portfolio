@@ -21,6 +21,15 @@ let h2 = document.querySelectorAll('h2');
 let ftProjects = document.getElementById('featuredProjects');
 let featuredInfo = [
     {
+        name: "Remote Job Board",
+        id: "remoteJobBoard",
+        background: "Images/remote-job-board.png",
+        description: "A search tool built with Bootstrap that calls an API and allows users to browse jobs and store and remove favorites.",
+        skills: ["jQuery", "Bootstrap", "API"],
+        git: "https://github.com/nicscobey/job-board",
+        live: "https://nicscobey.github.io/job-board/"
+    },
+    {
         name: "Calculator",
         id: "calc",
         background: "Images/Calculator.png",
