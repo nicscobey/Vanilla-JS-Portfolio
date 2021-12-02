@@ -21,6 +21,24 @@ let h2 = document.querySelectorAll('h2');
 let ftProjects = document.getElementById('featuredProjects');
 let featuredInfo = [
     {
+        name: "Flashcards App",
+        id: "flashcards",
+        background: "Images/flashcards.png",
+        description: "Full-stack application built with React that features several models with CRUD functionality.",
+        skills: ["React", "JavaScript", "Express", "Material UI"],
+        git: "https://github.com/nicscobey/ringo-project3-frontend",
+        live: "https://ringo-flashcards.netlify.app/"
+    },
+    {
+        name: "App Buddy",
+        id: "appBuddy",
+        background: "Images/app-buddy.png",
+        description: "A full-stack application with session-based user authentication full CRUD functionality, allowing users to track job applications and networking contacts.",
+        skills: ["JavaScript", "Express", "MongoDB & Mongoose"],
+        git: "https://github.com/nicscobey/ga-jobseeker-tracker",
+        live: "https://career-engineer-job-tracker.herokuapp.com/"
+    },
+    {
         name: "Remote Job Board",
         id: "remoteJobBoard",
         background: "Images/remote-job-board.png",
@@ -29,15 +47,15 @@ let featuredInfo = [
         git: "https://github.com/nicscobey/job-board",
         live: "https://nicscobey.github.io/job-board/"
     },
-    {
-        name: "Calculator",
-        id: "calc",
-        background: "Images/Calculator.png",
-        description: "A calculator that includes the four basic math functions, convertage to percentage, and invert positive/negative.",
-        skills: ["JavaScript", "HTML", "CSS"],
-        git: "https://github.com/nicscobey/calculator",
-        live: "https://nicscobey.github.io/calculator/"
-    },
+    // {
+    //     name: "Calculator",
+    //     id: "calc",
+    //     background: "Images/Calculator.png",
+    //     description: "A calculator that includes the four basic math functions, convertage to percentage, and invert positive/negative.",
+    //     skills: ["JavaScript", "HTML", "CSS"],
+    //     git: "https://github.com/nicscobey/calculator",
+    //     live: "https://nicscobey.github.io/calculator/"
+    // },
     {
         name: "Gif Memory Card Game",
         id: "memory",
@@ -46,7 +64,8 @@ let featuredInfo = [
         skills: ["APIs", "JavaScript", "HTML", "CSS"],
         git: "https://github.com/nicscobey/MemoryCardGame",
         live: "https://nicscobey.github.io/MemoryCardGame/"
-    },{
+    },
+    {
         name: "Small Business Website",
         id: "smallBusinessWebsite",
         background: "Images/Small\ Business\ Website.png",
