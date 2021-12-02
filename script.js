@@ -25,7 +25,7 @@ let featuredInfo = [
         id: "flashcards",
         background: "Images/flashcards.png",
         description: "Full-stack application built with React that features several models with CRUD functionality.",
-        skills: ["React", "JavaScript", "Express", "Material UI"],
+        skills: ["React", "JavaScript", "Express"],
         git: "https://github.com/nicscobey/ringo-project3-frontend",
         live: "https://ringo-flashcards.netlify.app/"
     },
