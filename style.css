@@ -552,7 +552,7 @@ i {
 
 .skillCard {
   /* width: 20vw; */
-  width: 150px;
+  width: 100px;
   text-align: center;
   /* max-width: 150px; */
   transition-duration: 0.5s;
