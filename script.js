@@ -21,6 +21,15 @@ let h2 = document.querySelectorAll('h2');
 let ftProjects = document.getElementById('featuredProjects');
 let featuredInfo = [
     {
+        name: "Blog",
+        id: "blog",
+        background: "Images/blog.png",
+        description: "Full-stack application built with React and Python that features several models with CRUD functionality.",
+        skills: ["React", "JavaScript", "Python", "Django"],
+        git: "https://github.com/nicscobey/blog_react_frontend",
+        live: "https://career-engineer-blog.netlify.app/"
+    },
+    {
         name: "Flashcards App",
         id: "flashcards",
         background: "Images/flashcards.png",
